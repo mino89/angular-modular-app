@@ -1,11 +1,15 @@
+import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('@@hosted-lib').then(m => m.HostedModule)
-  }
+    loadChildren: () =>
+      loadRemoteModule({ type: 'manifest', remoteName: 'hosted', exposedModule: './Module' }).then(
+        (m) => m.HostedModule,
+      ),
+  },
 ];
 
 @NgModule({
