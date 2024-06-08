@@ -1,0 +1,1 @@
+export {HostedModule} from './app/hosted/hosted.module'

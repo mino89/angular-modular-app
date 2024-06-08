@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('@@hosted-lib').then(m => m.HostedModule)
+    loadChildren: () => import('./hosted/hosted.module').then(m => m.HostedModule)
+  
   }
 ];
 

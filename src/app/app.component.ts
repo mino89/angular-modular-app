@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ServicesService } from '@@services';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-modular-prj';
+  messageCount= 0;
+
+  service = inject(ServicesService)
+  count = this.service.generateCount()
+
+  sendMessage() {
+    this.messageCount++
+    this.service.sendMessage(`${this.messageCount} hello from service`);
+  }
 }
