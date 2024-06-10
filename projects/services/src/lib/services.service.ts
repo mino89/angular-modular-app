@@ -9,19 +9,19 @@ export class ServicesService {
   messageSubject = new BehaviorSubject<string>('');
   public message$ = this.messageSubject.asObservable();
 
-
+  obs$ = new Observable<number>((subscriber) => {
+    let count = 0;
+    let intervalId = setInterval(() => {
+      count++;
+      subscriber.next(count);
+    }, 1000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  });
   
   generateCount(): Observable<number> {
-    return new Observable<number>((subscriber) => {
-      let count = 0;
-      let intervalId = setInterval(() => {
-        count++;
-        subscriber.next(count);
-      }, 1000);
-      return () => {
-        clearInterval(intervalId);
-      };
-    });
+    return this.obs$
   }
   
   sendMessage(message: string) {
