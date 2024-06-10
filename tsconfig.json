@@ -20,7 +20,7 @@
       ],
       "@@hosted-lib":[
         "./dist/hosted-lib"
-      ],
+      ]
     },
     "importHelpers": true,
     "target": "ES2022",
@@ -30,11 +30,5 @@
       "ES2022",
       "dom"
     ]
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
   }
 }

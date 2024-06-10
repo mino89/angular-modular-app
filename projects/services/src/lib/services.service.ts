@@ -19,9 +19,13 @@ export class ServicesService {
       clearInterval(intervalId);
     };
   });
+
+  get obsObj() {
+    return this.obs$;
+  }
   
   generateCount(): Observable<number> {
-    return this.obs$
+    return this.obsObj
   }
   
   sendMessage(message: string) {

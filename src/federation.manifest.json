@@ -1,3 +1,5 @@
 {
-	"hosted": "http://localhost:4201/remoteEntry.json"
+	"hosted": "http://localhost:4201/remoteEntry.json",
+	"info": "http://localhost:4202/remoteEntry.json"
+
 }

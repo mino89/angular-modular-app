@@ -5,8 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      loadRemoteModule('hosted', './Component').then((m) => m.AppComponent),
+    loadChildren: () =>
+      loadRemoteModule('hosted', './Module').then((m) => m.HostedModule),
+  },
+  {
+    path: 'info',
+    loadChildren: () =>
+      loadRemoteModule('info', './Module').then((m) => m.InfoModule),
   },
 ];
 
